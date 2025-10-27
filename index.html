@@ -3,62 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memories of Tomorrow | Eight5</title>
+  <title>Eight5 Music</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="stars"></div>
-  <div class="overlay"></div>
-  <main>
-    <header>
-      <h1>Memories of Tomorrow</h1>
-      <p class="subtitle">a sound & visual experiment by Eight5</p>
-    </header>
-    <section class="content">
-      <p>Immerse in soulful hip-hop, R&B, and digital art shaped by rhythm and nostalgia.</p>
-      <div class="social-icons">
-        <a href="#" id="email-link" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="bi bi-envelope">
-            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.708 2.825L15 11.8V5.383zM14.247 12H1.753l4.455-2.675L8 9.58l1.792-1.255L14.247 12zM1 11.8l4.708-3.592L1 5.383V11.8z"/>
-          </svg>
-        </a>
-        <a href="#" id="fb-link" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="bi bi-facebook">
-            <path d="M8.94 6.745H7.4V5.6c0-.416.276-.513.47-.513h1.05V3.448L8.223 3.4C6.791 3.4 6.1 4.25 6.1 5.438v1.307H4.6V8.94h1.5v4.94h1.8V8.94h1.41L9.46 6.745H7.9z"/>
-          </svg>
-        </a>
-        <a href="#" id="ig-link" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="bi bi-instagram">
-            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.174-1.434-.372-1.942a3.927 3.927 0 0 0-.923-1.417A3.916 3.916 0 0 0 13.24.42c-.509-.198-1.09-.333-1.942-.372C10.445.01 10.173 0 8 0zM8 3.9a4.1 4.1 0 1 0 4.1 4.1A4.104 4.104 0 0 0 8 3.9zM8 11.6a3.6 3.6 0 1 1 3.6-3.6A3.604 3.604 0 0 1 8 11.6zm5.2-7.294a.96.96 0 1 1-.96-.96.96.96 0 0 1 .96.96z"/>
-          </svg>
-        </a>
-        <a href="#" id="x-link" aria-label="Twitter">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="bi bi-twitter">
-            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-          </svg>
-        </a>
-        <a href="#" id="youtube-link" aria-label="YouTube">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="bi bi-youtube">
-            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.001-.187.009-1.043.074-1.957l.008-.104.01-.26.022-.26.008-.104c.048-.52.119-1.022.22-1.402a2.01 2.01 0 0 1 1.415-1.42c1.16-.302 5.31-.332 6.18-.335zM6.54 5.794v4.412l4.25-2.206-4.25-2.206z"/>
-          </svg>
-        </a>
-      </div>
-    </section>
-    <section id="music">
-      <h2>Listen</h2>
-      <div class="playlist">
-        <div class="track" data-src="Goodwill - New Life.mp3">New Life</div>
-        <div class="track" data-src="Goodwill - Hey Hey.mp3">Hey Hey</div>
-      </div>
-      <audio id="audioPlayer" controls>
-        <source src="Goodwill - New Life.mp3" type="audio/mpeg">
-        Your browser doesn’t support the audio element.
-      </audio>
-    </section>
-    <footer>
-      <p>© 2025 Eight5 — crafted somewhere between yesterday & tomorrow.</p>
-    </footer>
-  </main>
+  <div class="social-icons">
+    <a href="#" id="fb-link"><img src="fb.png" alt="Facebook"></a>
+    <a href="#" id="ig-link"><img src="ig.png" alt="Instagram"></a>
+    <a href="#" id="yt-link"><img src="yt.png" alt="YouTube"></a>
+  </div>
+  <section id="music">
+    <div class="playlist">
+      <div class="track" data-src="Goodwill - New Life.mp3">New Life</div>
+      <div class="track" data-src="Goodwill - Hey Hey.mp3">Hey Hey</div>
+    </div>
+    <audio id="audioPlayer" controls>
+      <source src="Goodwill - New Life.mp3" type="audio/mpeg" />
+      Your browser doesn’t support the audio element.
+    </audio>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
