@@ -8,7 +8,7 @@
   <style>
     /* Custom music player styling */
     #music {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255,255,255,0.05);
       padding: 20px;
       border-radius: 8px;
       margin: 40px auto;
@@ -21,7 +21,7 @@
     }
     #music .track {
       padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
       cursor: pointer;
       transition: background-color 0.2s;
     }
@@ -29,8 +29,9 @@
       border-bottom: none;
     }
     #music .track:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255,255,255,0.1);
     }
+    /* invert native audio controls so they appear white on dark backgrounds */
     #music audio {
       width: 100%;
       margin-top: 15px;
@@ -40,17 +41,23 @@
 </head>
 <body>
   <div class="social-icons">
-    <a href="#" id="fb-link"><img src="fb.png" alt="Facebook" style="filter:none;width:30px;height:30px;"></a>
-    <a href="#" id="ig-link"><img src="ig.png" alt="Instagram" style="filter:none;width:30px;height:30px;"></a>
-    <a href="#" id="yt-link"><img src="yt.png" alt="YouTube" style="filter:none;width:30px;height:30px;"></a>
+    <a href="#" id="fb-link">
+      <img src="fb.png" alt="Facebook" style="filter:none;width:30px;height:30px;">
+    </a>
+    <a href="#" id="ig-link">
+      <img src="ig.png" alt="Instagram" style="filter:none;width:30px;height:30px;">
+    </a>
+    <a href="#" id="yt-link">
+      <img src="yt.png" alt="YouTube" style="filter:none;width:30px;height:30px;">
+    </a>
   </div>
   <section id="music">
     <div class="playlist">
-      <div class="track" data-src="Goodwill - New Life.mp3">New Life</div>
-      <div class="track" data-src="Goodwill - Hey Hey.mp3">Hey Hey</div>
+      <div class="track" data-src="Goodwill - New Life.mp3">New Life</div>
+      <div class="track" data-src="Goodwill - Hey Hey.mp3">Hey Hey</div>
     </div>
     <audio id="audioPlayer" controls>
-      <source src="Goodwill - New Life.mp3" type="audio/mpeg" />
+      <source src="Goodwill - New Life.mp3" type="audio/mpeg">
       Your browser doesn’t support the audio element.
     </audio>
   </section>
