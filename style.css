@@ -125,6 +125,16 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
+/* Override icon and track sizes */
+.social-icons img {
+  width: 60px;
+  height: 60px;
+}
+
+.track {
+  font-size: 0.7rem;
+}
+
 
 #visualizer {
   display: none !important;
