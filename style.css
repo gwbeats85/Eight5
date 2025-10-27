@@ -24,7 +24,7 @@ body {
 }
 
 @keyframes twinkle {
-  0%,100% { opacity: 0.15; }
+  0%, 100% { opacity: 0.15; }
   50% { opacity: 0.25; }
 }
 
@@ -75,10 +75,6 @@ h1 {
   color: #111;
 }
 
-#visualizer {
-  display: none;
-}
-
 .playlist {
   display: flex;
   flex-direction: column;
@@ -117,8 +113,20 @@ h1 {
   border-color: #00bcd4;
 }
 
+audio {
+  margin-top: 30px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  outline: none;
+}
+
 footer {
   margin-top: 100px;
   font-size: 0.9rem;
   color: #777;
+}
+
+#visualizer {
+  display: none !important;
 }
