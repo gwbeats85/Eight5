@@ -59,3 +59,10 @@ trackList.addEventListener("change", () => {
   audio.src = newTrack;
   audio.play();
 });
+const trackList = document.getElementById("trackList");
+trackList.addEventListener("change", () => {
+  const newTrack = trackList.value;
+  audio.src = newTrack;
+  audio.play();
+});
+
