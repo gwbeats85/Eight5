@@ -81,6 +81,7 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
+
 audio {
   margin-top: 30px;
   width: 80%;
@@ -88,6 +89,7 @@ audio {
   border-radius: 10px;
   outline: none;
 }
+
 #visualizer {
   width: 100%;
   height: 150px;
@@ -95,35 +97,42 @@ audio {
   margin-top: 20px;
   border-radius: 8px;
 }
+
+/* New playlist styling */
 .playlist {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   margin: 30px auto;
   max-width: 400px;
 }
 
 .track {
   width: 100%;
-  padding: 10px 15px;
-  background: #111;
-  color: #eaeaea;
-  border-radius: 6px;
+  padding: 10px 12px;
+  background: transparent;
+  color: #ccc;
+  border: none;
+  border-bottom: 1px solid #222;
   cursor: pointer;
   text-align: left;
-  transition: background 0.3s ease, transform 0.2s ease;
-  border: 1px solid #333;
+  transition: color 0.3s ease, transform 0.2s ease;
   font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+}
+
+.track:last-child {
+  border-bottom: none;
 }
 
 .track:hover {
-  background: linear-gradient(90deg, #00bcd4, #8e44ad);
-  transform: translateY(-2px);
+  color: #00bcd4;
+  transform: translateX(4px);
 }
 
 .track.active {
-  background: linear-gradient(90deg, #8e44ad, #00bcd4);
   color: #fff;
-  border-color: transparent;
+  font-weight: 600;
+  border-color: #00bcd4;
 }
