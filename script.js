@@ -53,3 +53,9 @@ window.addEventListener("DOMContentLoaded", () => {
     renderFrame();
   });
 });
+const trackList = document.getElementById("trackList");
+trackList.addEventListener("change", () => {
+  const newTrack = trackList.value;
+  audio.src = newTrack;
+  audio.play();
+});
