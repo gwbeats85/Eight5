@@ -9,23 +9,25 @@
 <body>
   <div class="stars"></div>
   <div class="overlay"></div>
-
   <main>
     <header>
       <h1>Memories of Tomorrow</h1>
       <p class="subtitle">a sound & visual experiment by Eight5</p>
     </header>
-
     <section class="content">
       <p>Immerse in soulful hip-hop, R&B, and digital art shaped by rhythm and nostalgia.</p>
-      <a href="#music" class="btn">Listen</a>
-      <a href="#art" class="btn secondary">View Art</a>
+      <div class="social-icons">
+        <a href="#" id="email-link"><img src="email.svg" alt="Email"></a>
+        <a href="#" id="fb-link"><img src="fb.svg" alt="Facebook"></a>
+        <a href="#" id="ig-link"><img src="ig.svg" alt="Instagram"></a>
+        <a href="#" id="x-link"><img src="x.svg" alt="X"></a>
+        <a href="#" id="youtube-link"><img src="youtube.svg" alt="YouTube"></a>
+      </div>
     </section>
-
     <section id="music">
       <h2>Listen</h2>
       <div class="playlist">
-        <div class="track" data-src="Goodwill - New Life.mp3">New Life</div>
+        <div class="track active" data-src="Goodwill - New Life.mp3">New Life</div>
         <div class="track" data-src="Goodwill - Hey Hey.mp3">Hey Hey</div>
       </div>
       <audio id="audioPlayer" controls>
@@ -33,12 +35,10 @@
         Your browser doesn’t support the audio element.
       </audio>
     </section>
-
     <footer>
       <p>© 2025 Eight5 — crafted somewhere between yesterday & tomorrow.</p>
     </footer>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
