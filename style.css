@@ -96,30 +96,34 @@ audio {
   border-radius: 8px;
 }
 .playlist {
-  margin: 20px auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 30px auto;
+  max-width: 400px;
 }
 
-.playlist label {
-  color: #aaa;
-  font-size: 0.9rem;
-  margin-right: 10px;
-}
-
-#trackList {
-  background-color: #111;
-  color: #fff;
-  border: 1px solid #444;
+.track {
+  width: 100%;
+  padding: 10px 15px;
+  background: #111;
+  color: #eaeaea;
   border-radius: 6px;
-  padding: 8px 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: 1px solid #333;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
 }
 
-#trackList:hover,
-#trackList:focus {
-  border-color: #00bcd4;
-  outline: none;
+.track:hover {
+  background: linear-gradient(90deg, #00bcd4, #8e44ad);
+  transform: translateY(-2px);
 }
 
+.track.active {
+  background: linear-gradient(90deg, #8e44ad, #00bcd4);
+  color: #fff;
+  border-color: transparent;
+}
