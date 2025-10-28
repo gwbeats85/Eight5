@@ -15,33 +15,33 @@ body {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   padding: 10px 20px;
   border-radius: 10px;
+  text-align: center;
 }
 
 #track-title {
+  font-size: 1rem;
   margin-bottom: 5px;
-  font-size: 1.2rem;
 }
 
 .controls button {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
   border: none;
-  margin: 0 6px;
-  padding: 5px 10px;
+  color: #fff;
+  margin: 0 5px;
+  padding: 4px 8px;
   border-radius: 5px;
   font-size: 1rem;
-  cursor: pointer;
 }
 
 .controls button:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* Social icons bar at bottom center */
 .social-icons {
   position: fixed;
   bottom: 20px;
@@ -54,22 +54,24 @@ body {
   border-radius: 20px;
 }
 
+/* Social icons images */
 .social-icons img {
   width: 40px;
   height: 40px;
   margin: 0 4px;
 }
 
+/* Vault link bottom right */
 .vault-link {
   position: fixed;
   bottom: 20px;
   right: 20px;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
   font-family: 'Futura', sans-serif;
   display: flex;
   align-items: center;
+  font-size: 1rem;
 }
 
 .vault-link .vault-icon {
