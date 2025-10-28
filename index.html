@@ -161,6 +161,7 @@
 
     <!-- Hidden audio element -->
     <audio id="audioPlayer"></audio>
+     <canvas id="visualizer"></canvas>
   </div>
 
   <script src="script.js"></script>
@@ -198,6 +199,7 @@
       });
       const track = items[index];
       audio.src = track.dataset.src;
+       audio.load();
       nowCover.src = track.dataset.cover;
       nowTitle.textContent = track.dataset.title;
       nowArtist.textContent = track.dataset.artist;
