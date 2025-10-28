@@ -18,20 +18,17 @@ window.addEventListener("DOMContentLoaded", () => {
   src.connect(analyser);
   analyser.connect(audioCtx.destination);
   analyser.fftSize = 256;
-
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
-    canvas.height = 150;
   }
   window.addEventListener("resize", resizeCanvas);
 
   function renderFrame() {
     requestAnimationFrame(renderFrame);
     analyser.getByteFrequencyData(dataArray);
-
     ctx.fillStyle = "#0a0a0a";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -42,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const red = barHeight + 100;
       const green = 50 + (i / bufferLength) * 150;
       const blue = 200;
-      ctx.fillStyle = `rgb(${red},${green},${blue})`;
+      ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`;
       ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
       x += barWidth + 1;
     }
@@ -53,16 +50,3 @@ window.addEventListener("DOMContentLoaded", () => {
     renderFrame();
   });
 });
-const trackList = document.getElementById("trackList");
-trackList.addEventListener("change", () => {
-  const newTrack = trackList.value;
-  audio.src = newTrack;
-  audio.play();
-});
-const trackList = document.getElementById("trackList");
-trackList.addEventListener("change", () => {
-  const newTrack = trackList.value;
-  audio.src = newTrack;
-  audio.play();
-});
-
