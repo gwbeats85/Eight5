@@ -6,85 +6,246 @@
   <title>Eight5 Music</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Music container: smaller and centered */
-    #music {
-      background-color: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 8px;
+    /* Container around the whole player */
+    .player-container {
+      background-color: #000;
+      color: #fff;
+      max-width: 480px;
       margin: 40px auto;
-      max-width: 400px; /* adjust this value to your liking */
-      text-align: center;
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: sans-serif;
     }
-    #music .playlist {
-      margin: 20px 0;
+    /* Now playing section */
+    .now-playing {
+      display: flex;
+      align-items: center;
+      padding: 16px;
     }
-    /* Each track is a flex row: title on left, time on right */
-    #music .track {
+    .now-playing img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-right: 14px;
+    }
+    .now-playing .info {
+      flex-grow: 1;
+    }
+    .now-playing .info .title {
+      font-weight: bold;
+      margin: 0;
+    }
+    .now-playing .info .artist {
+      font-size: 0.9rem;
+      color: #bbb;
+      margin: 4px 0 0;
+    }
+    /* Controls row */
+    .controls {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 10px 16px;
+    }
+    .controls button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+    /* Playlist list */
+    .playlist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .playlist li {
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-top: 1px solid #222;
       cursor: pointer;
       transition: background-color 0.2s;
     }
-    #music .track:last-child {
-      border-bottom: none;
+    .playlist li.active {
+      background-color: #111;
     }
-    #music .track:hover {
-      background-color: rgba(255,255,255,0.1);
+    .playlist li:hover {
+      background-color: #1a1a1a;
     }
-    #music .track .time {
+    .playlist img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 12px;
+    }
+    .playlist .track-info {
+      flex-grow: 1;
+    }
+    .playlist .track-info .track-title {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .playlist .track-info .track-artist {
+      font-size: 0.8rem;
+      color: #888;
+      margin: 2px 0 0;
+    }
+    .playlist .duration {
       font-size: 0.8rem;
       color: #888;
     }
-    /* Invert the default audio controls so they're white */
-    #music audio {
-      width: 100%;
-      margin-top: 15px;
-      filter: invert(1);
+    /* Hide default audio controls */
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
+  <!-- Social icons remain as before -->
   <div class="social-icons">
     <a href="#" id="fb-link"><img src="fb.png" alt="Facebook" style="filter:none;width:30px;height:30px;"></a>
     <a href="#" id="ig-link"><img src="ig.png" alt="Instagram" style="filter:none;width:30px;height:30px;"></a>
     <a href="#" id="yt-link"><img src="yt.png" alt="YouTube" style="filter:none;width:30px;height:30px;"></a>
   </div>
 
-  <section id="music">
-    <div class="playlist">
-      <div class="track" data-src="Goodwill - New Life.mp3">
-        <span class="title">New Life</span>
-        <span class="time"></span>
-      </div>
-      <div class="track" data-src="Goodwill - Hey Hey.mp3">
-        <span class="title">Hey Hey</span>
-        <span class="time"></span>
+  <div class="player-container">
+    <!-- Now playing section -->
+    <div class="now-playing">
+      <img id="now-cover" src="placeholder1.jpg" alt="Now playing cover">
+      <div class="info">
+      <p class="title" id="now-title">Track 1</p>
+      <p class="artist" id="now-artist">Artist 1</p>
       </div>
     </div>
-    <audio id="audioPlayer" controls>
-      <source src="Goodwill - New Life.mp3" type="audio/mpeg">
-      Your browser doesn’t support the audio element.
-    </audio>
-  </section>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="prev-btn">&#x23EE;</button>
+      <button id="play-btn">&#x25B6;</button>
+      <button id="next-btn">&#x23ED;</button>
+    </div>
+
+    <!-- Playlist -->
+    <ul class="playlist" id="playlist">
+      <li data-src="Goodwill - New Life.mp3" data-cover="placeholder1.jpg" data-title="Give it Up" data-artist="Roy Young">
+        <img src="placeholder1.jpg" alt="Cover">
+        <div class="track-info">
+          <p class="track-title">Give it Up</p>
+          <p class="track-artist">Roy Young</p>
+        </div>
+        <span class="duration"></span>
+      </li>
+      <li data-src="Goodwill - Hey Hey.mp3" data-cover="placeholder2.jpg" data-title="Clockwork" data-artist="Hans Johnson">
+        <img src="placeholder2.jpg" alt="Cover">
+        <div class="track-info">
+          <p class="track-title">Clockwork</p>
+          <p class="track-artist">Hans Johnson</p>
+        </div>
+        <span class="duration"></span>
+      </li>
+      <li data-src="track3.mp3" data-cover="placeholder3.jpg" data-title="Autumn Waves" data-artist="Rex Banner">
+        <img src="placeholder3.jpg" alt="Cover">
+        <div class="track-info">
+          <p class="track-title">Autumn Waves</p>
+          <p class="track-artist">Rex Banner</p>
+        </div>
+        <span class="duration"></span>
+      </li>
+      <!-- add more <li> items as needed -->
+    </ul>
+
+    <!-- Hidden audio element -->
+    <audio id="audioPlayer"></audio>
+  </div>
 
   <script src="script.js"></script>
   <script>
-    // Populate durations for each track when metadata is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      const tracks = document.querySelectorAll('.track');
-      tracks.forEach(track => {
-        const file = track.getAttribute('data-src');
-        const tempAudio = new Audio(file);
+    // Simple custom player logic
+    const audio = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('play-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const playlist = document.getElementById('playlist');
+    const nowCover = document.getElementById('now-cover');
+    const nowTitle = document.getElementById('now-title');
+    const nowArtist = document.getElementById('now-artist');
+    let currentIndex = 0;
+
+    // Load durations for all tracks
+    function loadDurations() {
+      const items = playlist.querySelectorAll('li');
+      items.forEach((item) => {
+        const src = item.dataset.src;
+        const tempAudio = new Audio(src);
         tempAudio.addEventListener('loadedmetadata', () => {
           const mins = Math.floor(tempAudio.duration / 60);
           const secs = Math.floor(tempAudio.duration % 60).toString().padStart(2, '0');
-          track.querySelector('.time').textContent = \`\${mins}:\${secs}\`;
+          item.querySelector('.duration').textContent = \`\${mins}:\${secs}\`;
         });
       });
+    }
+
+    // Set current track information
+    function setCurrentTrack(index) {
+      const items = playlist.querySelectorAll('li');
+      items.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+      const track = items[index];
+      audio.src = track.dataset.src;
+      nowCover.src = track.dataset.cover;
+      nowTitle.textContent = track.dataset.title;
+      nowArtist.textContent = track.dataset.artist;
+    }
+
+    // Play/pause toggle
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸';
+      } else {
+        audio.pause();
+        playBtn.textContent = '▶️';
+      }
     });
+
+    // Next/previous
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % playlist.children.length;
+      setCurrentTrack(currentIndex);
+      audio.play();
+      playBtn.textContent = '⏸';
+    });
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + playlist.children.length) % playlist.children.length;
+      setCurrentTrack(currentIndex);
+      audio.play();
+      playBtn.textContent = '⏸';
+    });
+
+    // Click on a playlist item
+    playlist.addEventListener('click', (e) => {
+      const li = e.target.closest('li');
+      if (!li) return;
+      currentIndex = Array.from(playlist.children).indexOf(li);
+      setCurrentTrack(currentIndex);
+      audio.play();
+      playBtn.textContent = '⏸';
+    });
+
+    // When track ends, go to next
+    audio.addEventListener('ended', () => {
+      nextBtn.click();
+    });
+
+    // Initialize
+    loadDurations();
+    setCurrentTrack(currentIndex);
   </script>
 </body>
 </html>
