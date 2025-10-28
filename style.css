@@ -107,3 +107,31 @@ body {
   height: 1em;
   margin-right: 8px;
 }
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        top: 55%;
+    }
+    .about-photo {
+        width: 150px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .about-bio {
+        max-width: 90%;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    #music-player {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 16px;
+    }
+    .social-icons {
+        bottom: 80px;
+    }
+}
+
