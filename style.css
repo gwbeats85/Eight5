@@ -16,14 +16,14 @@ body {
   display: flex;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 5px 10px;
+  padding: 2px 6px;
   border-radius: 20px;
 }
 
 .social-icons img {
   width: 40px;
   height: 40px;
-  margin: 0 5px;
+  margin: 0 4px;
 }
 
 .vault-link {
@@ -32,13 +32,13 @@ body {
   right: 20px;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
   font-family: 'Futura', sans-serif;
+  font-size: 1rem;
   display: flex;
   align-items: center;
 }
 
 .vault-link .vault-icon {
   height: 1em;
-  margin-right: 6px;
+  margin-right: 8px;
 }
