@@ -5,10 +5,19 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 .social-icons img {
@@ -31,6 +40,5 @@ body {
 
 .vault-link .vault-icon {
   height: 1em;
-  width: auto;
   margin-right: 8px;
 }
